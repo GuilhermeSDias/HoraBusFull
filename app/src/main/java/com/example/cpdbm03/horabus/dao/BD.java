@@ -20,7 +20,8 @@ public class BD extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String sql = "CREATE TABLE Empresas(" +
                 "id_empresa INTEGER PRIMARY KEY," +
-                "nome TEXT NOT NULL);";
+                "nome TEXT NOT NULL," +
+                "caminhoFoto TEXT);";
         db.execSQL(sql);
 
         String sql2 = "CREATE TABLE Viagens(" +

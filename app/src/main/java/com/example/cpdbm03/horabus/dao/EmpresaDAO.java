@@ -42,6 +42,7 @@ public class EmpresaDAO extends BD {
             Empresa empresa = new Empresa();
             empresa.setId_empresa(c.getLong(c.getColumnIndex("id_empresa")));
             empresa.setNome(c.getString(c.getColumnIndex("nome")));
+            empresa.setCaminhoFoto(c.getString(c.getColumnIndex("caminhoFoto")));
 
             empresas.add(empresa);
         }
@@ -69,6 +70,7 @@ public class EmpresaDAO extends BD {
     private ContentValues pegaDadosDaEmpresa(Empresa empresa) {
         ContentValues dados = new ContentValues();
         dados.put("nome", empresa.getNome());
+        dados.put("caminhoFoto", empresa.getCaminhoFoto());
 
         return dados;
     }

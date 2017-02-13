@@ -11,6 +11,7 @@ public class Empresa implements Serializable {
 
     private Long id_empresa;
     private String nome;
+    private String caminhoFoto;
 
     public Long getId_empresa() {
         return id_empresa;
@@ -28,8 +29,16 @@ public class Empresa implements Serializable {
         this.nome = nome;
     }
 
+    public String getCaminhoFoto() { return caminhoFoto;
+    }
+
+    public void setCaminhoFoto(String caminhoFoto) { this.caminhoFoto = caminhoFoto;
+    }
+
     @Override
     public String toString() {
         return  getId_empresa() + "-" + getNome();
     }
+
+
 }

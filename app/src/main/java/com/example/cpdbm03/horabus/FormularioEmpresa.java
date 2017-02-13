@@ -9,9 +9,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.cpdbm03.horabus.dao.EmpresaDAO;
-import com.example.cpdbm03.horabus.dao.ViagemDAO;
 import com.example.cpdbm03.horabus.modelo.Empresa;
-import com.example.cpdbm03.horabus.modelo.Viagem;
 
 
 public class FormularioEmpresa extends AppCompatActivity {
@@ -23,7 +21,7 @@ public class FormularioEmpresa extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario_empresa);
 
-        helper = new FormularioEmpresaHelper(this);
+        helper = new FormularioEmpresaHelper(this, campoFoto);
 
         Intent intent = getIntent();
         Empresa empresa = (Empresa) intent.getSerializableExtra("empresa");
