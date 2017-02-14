@@ -48,6 +48,7 @@ public class ViagemDAO extends BD{
             viagem.setSaida(c.getString(c.getColumnIndex("saida")));
             viagem.setTarifa(c.getString(c.getColumnIndex("tarifa")));
             viagem.setId_empresa(c.getLong(c.getColumnIndex("id_empresa")));
+            viagem.setCaminhoFoto(c.getString(c.getColumnIndex("caminhoFoto")));
 
             viagens.add(viagem);
         }
@@ -79,6 +80,7 @@ public class ViagemDAO extends BD{
         dados.put("saida", viagem.getSaida());
         dados.put("tarifa", viagem.getTarifa());
         dados.put("id_empresa", viagem.getId_empresa());
+        dados.put("caminhoFoto", viagem.getCaminhoFoto());
 
         return dados;
     }
