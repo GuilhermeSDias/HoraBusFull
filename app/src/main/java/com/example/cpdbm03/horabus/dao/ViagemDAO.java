@@ -25,12 +25,14 @@ public class ViagemDAO extends BD{
         super(context);
     }
 
-    public void insere(Viagem viagem) {
+    public ContentValues insere(Viagem viagem) {
         SQLiteDatabase db = getWritableDatabase();
 
         ContentValues dados = pegaDadosDaViagem(viagem);
 
-        db.insert("Viagens   ", null, dados);
+        db.insert("Viagens", null, dados);
+
+        return dados;
     }
 
     public List<Viagem> buscaViagens() {
@@ -81,6 +83,8 @@ public class ViagemDAO extends BD{
         dados.put("tarifa", viagem.getTarifa());
         dados.put("id_empresa", viagem.getId_empresa());
         dados.put("caminhoFoto", viagem.getCaminhoFoto());
+
+
 
         return dados;
     }

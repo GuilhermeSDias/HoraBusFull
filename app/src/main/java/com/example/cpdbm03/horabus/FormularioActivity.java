@@ -1,6 +1,7 @@
 package com.example.cpdbm03.horabus;
 
 import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.net.Uri;
 import android.provider.MediaStore;
@@ -100,7 +101,8 @@ public class FormularioActivity extends AppCompatActivity {
                 if(viagem.getId() != null) {
                     dao.altera(viagem);
                 } else {
-                    dao.insere(viagem);
+                    ContentValues aux = dao.insere(viagem);
+                    Toast.makeText(FormularioActivity.this, "Viagem "+ aux.get("origem"),Toast.LENGTH_SHORT).show();
                 }
                 dao.close();
 

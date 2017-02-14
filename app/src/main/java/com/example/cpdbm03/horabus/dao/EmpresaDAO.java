@@ -28,7 +28,7 @@ public class EmpresaDAO extends BD {
 
         ContentValues dados = pegaDadosDaEmpresa(empresa);
 
-        db.insert("Empresas   ", null, dados);
+        db.insert("Empresas", null, dados);
     }
 
     public List<Empresa> buscaEmpresas() {

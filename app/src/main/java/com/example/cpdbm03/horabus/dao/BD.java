@@ -20,8 +20,7 @@ public class BD extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String sql = "CREATE TABLE Empresas(" +
                 "id_empresa INTEGER PRIMARY KEY," +
-                "nome TEXT NOT NULL," +
-                "caminhoFoto TEXT);";
+                "nome TEXT NOT NULL);";
         db.execSQL(sql);
 
         String sql2 = "CREATE TABLE Viagens(" +
@@ -30,6 +29,7 @@ public class BD extends SQLiteOpenHelper {
                 "destino TEXT," +
                 "saida TEXT," +
                 "tarifa TEXT," +
+                "caminhoFoto TEXT,"+
                 "id_empresa INTEGER NOT NULL," +
                 "FOREIGN KEY(id_empresa) REFERENCES Empresas(id_empresa));";
         db.execSQL(sql2);
