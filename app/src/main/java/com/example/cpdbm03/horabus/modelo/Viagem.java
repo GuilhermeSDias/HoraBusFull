@@ -14,6 +14,7 @@ public class Viagem implements Serializable {
     private String saida;
     private String tarifa;
     private Long id_empresa;
+    private String caminhoFoto;
 
     public Long getId() {
         return id;
@@ -62,6 +63,10 @@ public class Viagem implements Serializable {
     public void setId_empresa(Long id_empresa) {
         this.id_empresa = id_empresa;
     }
+
+    public String getCaminhoFoto() { return caminhoFoto; }
+
+    public void setCaminhoFoto(String caminhoFoto) { this.caminhoFoto = caminhoFoto;  }
 
     @Override
     public String toString() {
