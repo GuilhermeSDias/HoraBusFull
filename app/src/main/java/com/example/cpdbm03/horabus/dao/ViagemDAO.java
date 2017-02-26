@@ -106,6 +106,7 @@ public class ViagemDAO extends BD{
             viagem.setSaida(c.getString(c.getColumnIndex("saida")));
             viagem.setTarifa(c.getString(c.getColumnIndex("tarifa")));
             viagem.setId_empresa(c.getLong(c.getColumnIndex("id_empresa")));
+            viagem.setCaminhoFoto(c.getString(c.getColumnIndex("caminhoFoto")));
 
             viagens.add(viagem);
 
