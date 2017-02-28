@@ -26,8 +26,8 @@ public class FormularioHelper {
         campoDestino = (EditText) activity.findViewById(R.id.formulario_destino);
         campoSaida = (EditText) activity.findViewById(R.id.formulario_saida);
         campoTarifa = (EditText) activity.findViewById(R.id.formulario_tarifa);
-        campoIdEmpresa = (Spinner) activity.findViewById(R.id.spinner);
         campoFoto = (ImageView) activity.findViewById(R.id.formulario_foto);
+        campoIdEmpresa = (Spinner) activity.findViewById(R.id.spinner);
         viagem = new Viagem();
     }
 
@@ -37,8 +37,9 @@ public class FormularioHelper {
         viagem.setDestino(campoDestino.getText().toString());
         viagem.setSaida(campoSaida.getText().toString());
         viagem.setTarifa(campoTarifa.getText().toString());
-        viagem.setId_empresa(campoIdEmpresa.getSelectedItemId()+1);
         viagem.setCaminhoFoto((String) campoFoto.getTag());
+        viagem.setId_empresa(campoIdEmpresa.getSelectedItemId()+1);
+
 
         return viagem;
     }
@@ -49,7 +50,7 @@ public class FormularioHelper {
         campoSaida.setText(viagem.getSaida());
         campoTarifa.setText(viagem.getTarifa());
         carregaImagem(viagem.getCaminhoFoto());
-       // campoIdEmpresa.setAdapter(viagem.getId_empresa());
+//        campoIdEmpresa.setAdapter(viagem.getId_empresa());
 
         this.viagem = viagem;
     }

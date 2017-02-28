@@ -56,6 +56,10 @@ public class Viagem implements Serializable {
         this.tarifa = tarifa;
     }
 
+    public String getCaminhoFoto() { return caminhoFoto; }
+
+    public void setCaminhoFoto(String caminhoFoto) { this.caminhoFoto = caminhoFoto;  }
+
     public Long getId_empresa() {
         return id_empresa;
     }
@@ -63,10 +67,6 @@ public class Viagem implements Serializable {
     public void setId_empresa(Long id_empresa) {
         this.id_empresa = id_empresa;
     }
-
-    public String getCaminhoFoto() { return caminhoFoto; }
-
-    public void setCaminhoFoto(String caminhoFoto) { this.caminhoFoto = caminhoFoto;  }
 
     @Override
     public String toString() {
