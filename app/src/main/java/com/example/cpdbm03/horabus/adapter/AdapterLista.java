@@ -5,8 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.cpdbm03.horabus.ListaEmpresaActivity;
 import com.example.cpdbm03.horabus.R;
 import com.example.cpdbm03.horabus.modelo.Viagem;
 
@@ -25,6 +27,9 @@ public class AdapterLista extends BaseAdapter {
         this.viagens = viagens;
         this.context = contx;
         this.tipo = tipo;
+    }
+
+public AdapterLista(ListView listaEmpresas, ListaEmpresaActivity listaEmpresaActivity) {
     }
 
     @Override

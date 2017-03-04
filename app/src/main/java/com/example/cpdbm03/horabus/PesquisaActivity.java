@@ -109,11 +109,11 @@ public class PesquisaActivity extends AppCompatActivity{
                         String EMPRESA = item.toString();
                         if(!(EMPRESA.equals("Selecione a Empresa..."))){
 
-                            ArrayList<Viagem> ListaDados = new ArrayList<Viagem>();
+                            ArrayList<Viagem> ListaViagens = new ArrayList<Viagem>();
 
-                            ListaDados = BD.BuscarFiltradoEmpresa(ORIGEM[0],DESTINO[0],EMPRESA);
+                            ListaViagens = BD.BuscarFiltradoEmpresa(ORIGEM[0],DESTINO[0],EMPRESA);
 
-                            AdapterLista adapterLista = new AdapterLista(PesquisaActivity.this, ListaDados, false);
+                            AdapterLista adapterLista = new AdapterLista(PesquisaActivity.this, ListaViagens, false);
 
                             ListConsulta.setAdapter(adapterLista);
                         }

@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.example.cpdbm03.horabus.adapter.AdapterLista;
 import com.example.cpdbm03.horabus.dao.EmpresaDAO;
 import com.example.cpdbm03.horabus.modelo.Empresa;
 
@@ -102,6 +103,9 @@ public class ListaEmpresaActivity extends AppCompatActivity {
 
         ArrayAdapter<Empresa> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, empresas);
         listaEmpresas.setAdapter(adapter);
+
+//        AdapterLista adapterLista = new AdapterLista(listaEmpresas, this);
+//        listaEmpresas.setAdapter(adapterLista);
     }
 
     @Override
@@ -121,7 +125,20 @@ public class ListaEmpresaActivity extends AppCompatActivity {
                 return false;
             }
         });
-    }
 
+        MenuItem editar = menu.add("Editar");
+        editar.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
+                Empresa empresa = (Empresa) listaEmpresas.getItemAtPosition(info.position);
+
+                EmpresaDAO dao = new EmpresaDAO(ListaEmpresaActivity.this);
+                dao.alteraEmpresa(empresa);
+                dao.close();
+                return false;
+            }
+        });
+    }
 
 }

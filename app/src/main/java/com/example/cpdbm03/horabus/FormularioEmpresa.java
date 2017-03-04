@@ -22,8 +22,6 @@ import static android.R.attr.data;
 
 
 public class FormularioEmpresa extends AppCompatActivity {
-
-
     private FormularioEmpresaHelper helper;
 
 
