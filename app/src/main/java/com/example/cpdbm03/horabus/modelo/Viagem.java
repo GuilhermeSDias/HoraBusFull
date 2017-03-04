@@ -12,7 +12,7 @@ public class Viagem implements Serializable {
     private String origem;
     private String destino;
     private String saida;
-    private String tarifa;
+    private Double tarifa;
     private Long id_empresa;
     private String caminhoFoto;
 
@@ -48,20 +48,18 @@ public class Viagem implements Serializable {
         this.saida = saida;
     }
 
-    public String getTarifa() {
-        return tarifa;
-    }
+//    public String getTarifa() { return tarifa; }
+//
+//    public void setTarifa(String tarifa) { this.tarifa = tarifa; }
+    public Double getTarifa() { return tarifa; }
 
-    public void setTarifa(String tarifa) {
-        this.tarifa = tarifa;
-    }
+    public void setTarifa(Double tarifa) { this.tarifa = tarifa; }
 
     public String getCaminhoFoto() { return caminhoFoto; }
 
     public void setCaminhoFoto(String caminhoFoto) { this.caminhoFoto = caminhoFoto;  }
 
-    public Long getId_empresa() {
-        return id_empresa;
+    public Long getId_empresa() { return id_empresa;
     }
 
     public void setId_empresa(Long id_empresa) {
@@ -72,8 +70,8 @@ public class Viagem implements Serializable {
     public String toString() {
         return  getOrigem() + "->" + getDestino() + "\n"
                 + getSaida() + "\n"
-                + getTarifa() + "\n"
-                + getId_empresa();
+                + getTarifa();
+
     }
 
 

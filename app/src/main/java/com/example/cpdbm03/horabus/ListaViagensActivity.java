@@ -10,7 +10,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.cpdbm03.horabus.dao.ViagemDAO;
 import com.example.cpdbm03.horabus.modelo.Viagem;
@@ -42,6 +41,14 @@ public class ListaViagensActivity extends AppCompatActivity {
             }
         });
 
+        Button pesquisa = (Button) findViewById(R.id.pesquisa);
+        pesquisa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ListaViagensActivity.this, PesquisaActivity.class));
+            }
+        });
+
         Button novaViagem = (Button) findViewById(R.id.nova_viagem);
         novaViagem.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +75,7 @@ public class ListaViagensActivity extends AppCompatActivity {
 
         ArrayAdapter<Viagem> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, viagens);
         listaViagens.setAdapter(adapter);
+
     }
 
     @Override

@@ -18,7 +18,6 @@ import java.util.List;
 
 public class EmpresaDAO extends BD {
 
-
     public EmpresaDAO(Context context) {
         super(context);
     }

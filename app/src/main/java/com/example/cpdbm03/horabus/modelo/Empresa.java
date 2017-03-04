@@ -31,7 +31,7 @@ public class Empresa implements Serializable {
 
     @Override
     public String toString() {
-        return  getId_empresa() + "-" + getNome();
+        return  getNome();
     }
 
 

@@ -20,7 +20,6 @@ import java.util.List;
 
 public class ViagemDAO extends BD{
 
-
     public ViagemDAO(Context context) {
         super(context);
     }
@@ -48,7 +47,7 @@ public class ViagemDAO extends BD{
             viagem.setOrigem(c.getString(c.getColumnIndex("origem")));
             viagem.setDestino(c.getString(c.getColumnIndex("destino")));
             viagem.setSaida(c.getString(c.getColumnIndex("saida")));
-            viagem.setTarifa(c.getString(c.getColumnIndex("tarifa")));
+            viagem.setTarifa(c.getDouble(c.getColumnIndex("tarifa")));
             viagem.setId_empresa(c.getLong(c.getColumnIndex("id_empresa")));
             viagem.setCaminhoFoto(c.getString(c.getColumnIndex("caminhoFoto")));
 
@@ -104,7 +103,7 @@ public class ViagemDAO extends BD{
             viagem.setOrigem(c.getString(c.getColumnIndex("origem")));
             viagem.setDestino(c.getString(c.getColumnIndex("destino")));
             viagem.setSaida(c.getString(c.getColumnIndex("saida")));
-            viagem.setTarifa(c.getString(c.getColumnIndex("tarifa")));
+            viagem.setTarifa(c.getDouble(c.getColumnIndex("tarifa")));
             viagem.setId_empresa(c.getLong(c.getColumnIndex("id_empresa")));
             viagem.setCaminhoFoto(c.getString(c.getColumnIndex("caminhoFoto")));
 
@@ -117,11 +116,6 @@ public class ViagemDAO extends BD{
 
         return viagens;
 
-
-
     }
-
-
-
 
 }

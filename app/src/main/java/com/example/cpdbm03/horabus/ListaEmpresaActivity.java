@@ -4,18 +4,16 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ContextMenu;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.cpdbm03.horabus.dao.EmpresaDAO;
-import com.example.cpdbm03.horabus.dao.ViagemDAO;
 import com.example.cpdbm03.horabus.modelo.Empresa;
-import com.example.cpdbm03.horabus.modelo.Viagem;
 
 import java.util.List;
 
@@ -51,6 +49,14 @@ public class ListaEmpresaActivity extends AppCompatActivity {
             }
         });
 
+        Button  pesquisa = (Button) findViewById(R.id.pesquisa);
+        pesquisa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ListaEmpresaActivity.this, PesquisaActivity.class));
+            }
+        });
+
         Button novaEmpresa = (Button) findViewById(R.id.nova_empresa);
         novaEmpresa.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +74,27 @@ public class ListaEmpresaActivity extends AppCompatActivity {
         super.onResume();
         carregaLista();
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_empresa, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.pesquisa) {
+
+            Intent pesquisa = new Intent(ListaEmpresaActivity.this, PesquisaActivity.class);
+
+            startActivity(pesquisa);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     private void carregaLista() {
         EmpresaDAO dao = new EmpresaDAO(this);
         List<Empresa> empresas = dao.buscaEmpresas();
