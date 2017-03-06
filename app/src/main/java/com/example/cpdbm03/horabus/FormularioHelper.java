@@ -36,7 +36,7 @@ public class FormularioHelper {
         viagem.setOrigem(campoOrigem.getText().toString());
         viagem.setDestino(campoDestino.getText().toString());
         viagem.setSaida(campoSaida.getText().toString());
-        viagem.setTarifa(Double.valueOf(campoTarifa.getText().toString()));
+        viagem.setTarifa(campoTarifa.getText().toString());
         viagem.setCaminhoFoto((String) campoFoto.getTag());
         viagem.setId_empresa(campoIdEmpresa.getSelectedItemId()+1);
 

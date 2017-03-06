@@ -75,4 +75,6 @@ public class Viagem implements Serializable {
     }
 
 
+    public void setTarifa(String s) {
+    }
 }
